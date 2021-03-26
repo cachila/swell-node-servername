@@ -6,7 +6,8 @@
     "swell",
     "ecommerce",
     "payments",
-    "api"
+    "api",
+    "esm"
   ],
   "homepage": "https://github.com/swellstores/swell-node",
   "author": "Swell",
@@ -19,15 +20,38 @@
     "node": ">= v12.21.0"
   },
   "devDependencies": {
+    "@babel/cli": "7.13.10",
+    "@babel/core": "7.13.10",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/preset-env": "7.13.12",
+    "@rollup/plugin-commonjs": "17.1.0",
     "chai": "3.5.0",
     "eslint": "7.14.0",
     "jest": "26.6.3",
+    "rollup": "2.42.4",
     "sinon": "9.2.4"
   },
   "dependencies": {},
   "license": "MIT",
   "scripts": {
+    "build": "rollup -c",
     "test": "jest --config=jest.config.json",
     "test:watch": "jest --config=jest.config.json --watch"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist",
+    "wrapper.mjs"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    ".": {
+      "module": "./dist/esm/index.js",
+      "require": "./dist/index.js",
+      "import": "./wrapper.mjs"
+    },
+    "./package.json": "./package.json"
   }
 }
