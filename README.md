@@ -1,6 +1,8 @@
-## Swell API library for NodeJS
+## Swell API library for NodeJS with servername support
 
 [Swell](https://www.swell.is) is a customizable, API-first platform for powering modern B2C/B2B shopping experiences and marketplaces. Build and connect anything using your favorite technologies, and provide admins with an easy to use dashboard.
+
+This project enables [tls servename option](https://nodejs.org/api/tls.html#tlsconnectoptions-callback)
 
 ## Install
 
